@@ -8,6 +8,13 @@ jobs:
     - uses: actions/checkout@master
     - name: Build
       run: ./build.sh
+    - name: Upload Build
+      uses: actions/upload-artifact@v4.5.0
+      with:
+        name: gasmask-intel
+        path: /Users/runner/Library/Developer/Xcode/DerivedData/Gas_Mask-*/Build/Products/Debug
+        if-no-files-found: warn
+        retention-days: 30
 
   build-arm:
     name: Build on ARM
@@ -16,3 +23,10 @@ jobs:
     - uses: actions/checkout@master
     - name: Build
       run: ./build-arm.sh
+    - name: Upload Build
+      uses: actions/upload-artifact@v4.5.0
+      with:
+        name: gasmask-arm
+        path: /Users/runner/Library/Developer/Xcode/DerivedData/Gas_Mask-*/Build/Products/Debug/Gas Mask.app
+        if-no-files-found: warn
+        retention-days: 30
