@@ -1,18 +1,18 @@
 on: push
+
 jobs:
   build-intel:
     name: Build on Intel
     runs-on: macos-14
     steps:
     - uses: actions/checkout@master
-
     - name: Build
       run: ./build.sh
+
   build-arm:
     name: Build on ARM
     runs-on: macos-14
     steps:
     - uses: actions/checkout@master
-
     - name: Build
       run: ./build-arm.sh
