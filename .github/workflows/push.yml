@@ -1,6 +1,4 @@
-name: "on-push"
-on:
-  - push
+on: push
 jobs:
   build-intel:
     name: Build on Intel
